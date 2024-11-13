@@ -34,6 +34,6 @@ export default {
 @import '@/scss/variables';
 @import 'bootstrap/scss/variables';
   .card-title {
-    color: $green;
+    color: #8FB8DE;
   }
 </style>

@@ -52,6 +52,6 @@ export default {
   $orange: #ff8300;
   .card-title {
     font-weight: bold;
-    color: $orange;
+    color: #8FB8DE;
   }
 </style>
