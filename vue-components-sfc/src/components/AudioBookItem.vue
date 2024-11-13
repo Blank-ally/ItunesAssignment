@@ -3,12 +3,24 @@ import {AudioBook} from "@/models/Media.js";
 
 export default {
   name: "AudioBookItem",
+  data(){
+    return {
+
+      Readmore: false,
+
+    }
+  },
   props: {
     item: {
       type: AudioBook,
       required: true,
     }
   },
+  methods: {
+    activateReadMore(){
+      this.Readmore = (this.Readmore) ? false: true;
+    }
+  }
 }
 </script>
 
@@ -24,6 +36,9 @@ export default {
           <p class="card-text fw-bold">{{item.primaryGenreName}}</p>
           <p class="card-text">By: {{item.artistName}}</p>
           <p class="card-text"><small class="text-body-secondary">{{item.wrapperType}}</small></p>
+          <p  class="card-text " v-if="!Readmore" v-html="item.description.slice(0, 100)"></p>
+          <p class="card-text " v-if="Readmore" v-html="item.description"></p>
+        <button @click="activateReadMore" class="btn btn-outline-primary ">More</button>
         </div>
       </div>
     </div>
